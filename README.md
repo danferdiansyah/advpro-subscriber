@@ -24,3 +24,9 @@ Host: localhost (komputer lokal)
 
 Port: 5672 (default untuk AMQP)
 ```
+
+Simuation of slow subscribers
+![image](https://github.com/user-attachments/assets/88296aa9-2967-496d-906f-0279b64b892a)
+
+Terlihat *queued messages* mencapai peak sampai 100 queue. Hal ini dikarenakan adanya `thread::sleep` selama satu detik untuk tiap pesan. Akhirnya, subscriber menjadi lambat dan queue meningkat drastis.
+
